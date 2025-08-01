@@ -7,14 +7,14 @@ title: "Dense Hofield Network: What is this exactly?"
 
 Inspired by the paper [Hopfield Networks is All You Need](https://arxiv.org/abs/2008.02217) by Ramsauer et al. (2020), I have been experimenting with dense hopfield networks and found a (probably not) novel way of stacking, randomly initialized, hopfield networks and training them via SGD and MSE loss to have the output of the last hopfield layer matched to mnist digits. This achives beautiful representations inside the hofield "image database".
 
-<video src="../media/dense-hopfield-multi-layer.mp4" width="512px" height="auto" controls autoplay loop muted></video>
+<video src="/media/dense-hopfield-multi-layer.mp4" width="512px" height="auto" controls autoplay loop muted></video>
 
 ## My Intuition for Dense Hopfield Networks
 
 Dense hopfield networks only use two mathematical operations: `matmul` and `softmax` that is it!
 The following graphic explains it best:
 <br >
-<img width="512px" height="auto" src="../media/DenseHopfieldNetworkFig.png" width="100%" height="auto"/>
+<img width="512px" height="auto" src="/media/DenseHopfieldNetworkFig.png" width="100%" height="auto"/>
 
 Taken from [https://ml-jku.github.io/hopfield-layers/](https://ml-jku.github.io/hopfield-layers/) and edited by me.
 
