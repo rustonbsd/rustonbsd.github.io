@@ -3,7 +3,7 @@
     
     Working on p2p systems at the moment and some ML stuff. 
     
-    This is a designated place to document research, findigs and projects, 
+    This is a designated place to document research, findings and projects, 
     
     idk `¯\_(ツ)_/¯` yet
 
