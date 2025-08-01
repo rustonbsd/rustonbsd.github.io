@@ -7,7 +7,7 @@ title: "Dense Hofield Network: What is this exactly?"
 
 Inspired by the paper [Hopfield Networks is All You Need](https://arxiv.org/abs/2008.02217) by Ramsauer et al. (2020), I have been experimenting with dense hopfield networks and found a (probably not) novel way of stacking, randomly initialized, hopfield networks and training them via SGD and MSE loss to have the output of the last hopfield layer matched to mnist digits. This achives beautiful representations inside the hofield "image database".
 
-<video src="/media/dense-hopfield-multi-layer.mp4" width="512px" height="auto" controls autoplay loop muted></video>
+<video src="/media/dense-hopfield-multi-layer.mp4" width="100%" height="auto" controls autoplay loop muted></video>
 
 ## My Intuition for Dense Hopfield Networks
 
@@ -34,4 +34,18 @@ To retrieve the result image `R` from `H` the hopfield *"image database"*, we si
     P.shape = (1, 10)
     R.shape = (1, 784)
 
-#todo
+Here an example where we fill the hopfield database `H` with sequences of numbers from 0 to 9 and we start with a different offset on every row.
+The target sequence we are looking for is `[4,5,6,7,8,9,0,1,2,3]` but some indicies (values 5 and 1 are) are zeroed out -> `[4,0,6,7,8,9,0,0,2,3]`.
+We want to retrieve the target `[4,5,6,7,8,9,0,1,2,3]` sequence from the database `H`.
+
+<video src="/media/Matrix-Multiplication1.mp4" width="100%" height="auto" controls autoplay loop muted></video>
+
+We now `softmax` the correspondence vector `C`:  `[188, 228, 268, 218, 178]` becomes `[0, 0, 1, 0, 0]`
+
+<video src="/media/Matrix-Multiplication.mp4" width="100%" height="auto" controls autoplay loop muted></video>
+
+At the end we get `[4,5,6,7,8,9,0,1,2,3]` just like we wanted 🎉.
+
+# TODO
+
+more is coming
